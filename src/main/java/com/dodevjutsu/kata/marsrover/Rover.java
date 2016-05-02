@@ -4,13 +4,13 @@ public class Rover {
 
     private int x;
     private int y;
-    private String direction;
+    private Direction direction;
 
     public Rover(int x, int y, String direction)
     {
         this.x = x;
         this.y = y;
-        this.direction = direction;
+        this.direction = Direction.create(direction);
     }
 
     public void receive(String commands)
@@ -19,25 +19,9 @@ public class Rover {
             String newCommand = commands.substring(i, i + 1);
 
             if (newCommand == "l") {
-                if (direction == "N") {
-                    direction = "W";
-                } else if (direction == "S") {
-                    direction = "E";
-                } else if (direction == "W") {
-                    direction = "N";
-                } else {
-                    direction = "S";
-                }
+                direction = direction.rotateLeft();
             } else if (newCommand == "r") {
-                if (direction == "N") {
-                    direction = "E";
-                } else if (direction == "S") {
-                    direction = "W";
-                } else if (direction == "W") {
-                    direction = "S";
-                } else {
-                    direction = "N";
-                }
+                direction = direction.rotateRight();
             }
         }
     }
@@ -57,7 +41,8 @@ public class Rover {
             return false;
         if (other.y != this.y)
             return false;
-        if (other.direction != this.direction)
+
+        if (!direction.equals(other.direction))
             return false;
         return true;
     }

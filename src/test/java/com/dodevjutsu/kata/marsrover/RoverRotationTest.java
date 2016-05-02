@@ -10,6 +10,7 @@ public class RoverRotationTest {
     public void testNorthRotateLeft() {
         Rover rover = new Rover(0, 0, "N");
         rover.receive("l");
+
         assertEquals(new Rover(0, 0, "W"), rover);
     }
 
