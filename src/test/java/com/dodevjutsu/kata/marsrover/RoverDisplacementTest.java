@@ -53,4 +53,20 @@ public class RoverDisplacementTest {
 
         assertEquals(new Rover(7, 6, "W"), rover);
     }
+
+    @Test
+    public void testEastDisplaceForward() {
+        Rover rover = new Rover(2, 2, "E");
+        rover.receive("f");
+
+        assertEquals(new Rover(3, 2, "E"), rover);
+    }
+
+    @Test
+    public void testEastDisplaceBackwards() {
+        Rover rover = new Rover(2, 2, "E");
+        rover.receive("b");
+
+        assertEquals(new Rover(1, 2, "E"), rover);
+    }
 }
