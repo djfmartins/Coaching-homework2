@@ -39,27 +39,27 @@ public class RoverRotationTest {
     public void testWestRotateLeft() {
         Rover rover = new Rover(0, 0, "W");
         rover.receive("l");
-        assertEquals(new Rover(0, 0, "N"), rover);
+        assertEquals(new Rover(0, 0, "S"), rover);
     }
 
     @Test
     public void testWestRotateRight() {
         Rover rover = new Rover(0, 0, "W");
         rover.receive("r");
-        assertEquals(new Rover(0, 0, "S"), rover);
+        assertEquals(new Rover(0, 0, "N"), rover);
     }
 
     @Test
     public void testEastRotateLeft() {
         Rover rover = new Rover(0, 0, "E");
         rover.receive("l");
-        assertEquals(new Rover(0, 0, "S"), rover);
+        assertEquals(new Rover(0, 0, "N"), rover);
     }
 
     @Test
     public void testEastRotateRight() {
         Rover rover = new Rover(0, 0, "E");
         rover.receive("r");
-        assertEquals(new Rover(0, 0, "N"), rover);
+        assertEquals(new Rover(0, 0, "S"), rover);
     }
 }

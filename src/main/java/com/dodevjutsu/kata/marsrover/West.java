@@ -9,11 +9,11 @@ public class West extends Direction {
 
     @Override
     public Direction rotateLeft() {
-        return Direction.create(NORTH);
+        return Direction.create(SOUTH);
     }
 
     @Override
     public Direction rotateRight() {
-        return Direction.create(SOUTH);
+        return Direction.create(NORTH);
     }
 }
