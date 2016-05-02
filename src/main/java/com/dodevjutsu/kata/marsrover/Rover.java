@@ -25,10 +25,14 @@ public class Rover {
             } else if (newCommand == "f") {
                 if (direction instanceof North) {
                     y = y + 1;
+                } else if (direction instanceof South) {
+                    y = y - 1;
                 }
             } else if (newCommand == "b") {
                 if (direction instanceof North) {
                     y = y - 1;
+                } else if (direction instanceof South) {
+                    y = y + 1;
                 }
             }
         }

@@ -21,4 +21,20 @@ public class RoverDisplacementTest {
 
         assertEquals(new Rover(5, 4, "N"), rover);
     }
+
+    @Test
+    public void testSouthDisplaceForward() {
+        Rover rover = new Rover(3, 2, "S");
+        rover.receive("f");
+
+        assertEquals(new Rover(3, 1, "S"), rover);
+    }
+
+    @Test
+    public void testSouthDisplaceBackwards() {
+        Rover rover = new Rover(3, 2, "S");
+        rover.receive("b");
+
+        assertEquals(new Rover(3, 3, "S"), rover);
+    }
 }
